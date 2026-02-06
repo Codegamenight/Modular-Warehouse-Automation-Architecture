@@ -1,4 +1,5 @@
-﻿# Modular Warehouse Automation Architecture Portfolio
+
+# Modular Warehouse Automation Architecture Portfolio
 
 ## Project Overview
 This project implements a modular automation architecture for a robotic warehouse cell, integrating PLC control, robotics, SCADA visualization, and cloud-based remote monitoring.
@@ -46,4 +47,7 @@ Steps to deploy will be documented.
 
 ## Testing
 FAT simulation, fault injection, and performance benchmarking will be documented.
+
+
+# Modular-Warehouse-Automation-Architecture
 

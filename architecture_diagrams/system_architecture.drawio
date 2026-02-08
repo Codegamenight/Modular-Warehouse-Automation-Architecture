@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Kimi AI" version="22.1.0" etag="system_architecture" type="device">
+  <diagram name="System Architecture" id="system_architecture_diagram">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Industrial Automation System Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- PLC Layer -->
+        <mxCell id="plc_block" value="&lt;b&gt;PLC Layer&lt;/b&gt;&lt;br&gt;Siemens/Beckhoff&lt;br&gt;&lt;br&gt;• Sensors&lt;br&gt;• Actuators&lt;br&gt;• Safety Signals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="800" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Robot Layer -->
+        <mxCell id="robot_block" value="&lt;b&gt;Robot Layer&lt;/b&gt;&lt;br&gt;Yaskawa Motoman (Simulated)&lt;br&gt;&lt;br&gt;&lt;i&gt;Handshake Signals:&lt;/i&gt;&lt;br&gt;Request → Execute → Done&lt;br&gt;&lt;br&gt;• Vision Camera Feedback" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="550" width="280" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Conveyor System -->
+        <mxCell id="conveyor_block" value="&lt;b&gt;Conveyor System&lt;/b&gt;&lt;br&gt;Material Flow&lt;br&gt;&lt;br&gt;• Connected to PLC&lt;br&gt;• Product Tracking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="500" y="550" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- SCADA Layer -->
+        <mxCell id="scada_block" value="&lt;b&gt;SCADA / HMI Dashboards&lt;/b&gt;&lt;br&gt;Visualization Layer&lt;br&gt;&lt;br&gt;• Alarms &amp;amp; Events&lt;br&gt;• KPI Panels&lt;br&gt;• Robot Status Monitoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="680" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Python Middleware -->
+        <mxCell id="python_block" value="&lt;b&gt;Python Middleware&lt;/b&gt;&lt;br&gt;Integration Layer&lt;br&gt;&lt;br&gt;• OPC UA Client&lt;br&gt;• MQTT Publisher&lt;br&gt;• SQL Interface" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="400" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Cloud Layer -->
+        <mxCell id="cloud_block" value="&lt;b&gt;Cloud Broker / Analytics&lt;/b&gt;&lt;br&gt;Remote Monitoring&lt;br&gt;&lt;br&gt;• Analytics Dashboard&lt;br&gt;• Remote Access&lt;br&gt;• Data Storage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#ffffff;strokeWidth=3;fontColor=#ffffff;fontSize=12;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="600" y="100" width="400" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <!-- PLC to Robot -->
+        <mxCell id="arrow_plc_robot" value="Control Signals" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="plc_block" target="robot_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Robot to SCADA -->
+        <mxCell id="arrow_robot_scada" value="Status / Alarms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="robot_block" target="scada_block">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="530" />
+              <mxPoint x="240" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Conveyor to PLC -->
+        <mxCell id="arrow_conv_plc" value="Feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="conveyor_block" target="plc_block">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="750" />
+              <mxPoint x="240" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PLC to SCADA (Data) -->
+        <mxCell id="arrow_plc_scada" value="Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="plc_block" target="scada_block">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="700" />
+              <mxPoint x="440" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- SCADA to Python -->
+        <mxCell id="arrow_scada_python" value="Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="scada_block" target="python_block">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="280" />
+              <mxPoint x="300" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Python to Cloud -->
+        <mxCell id="arrow_python_cloud" value="MQTT / SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="python_block" target="cloud_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Vision to Robot -->
+        <mxCell id="arrow_vision_robot" value="Vision Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2C3E50;fontColor=#2C3E50;fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="conveyor_block" target="robot_block">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="640" />
+              <mxPoint x="380" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#2C3E50;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="800" width="200" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_title" value="&lt;b&gt;Legend&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="810" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_blue" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="850" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_blue_text" value="PLC / Robot / Hardware" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="850" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_green" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="890" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_green_text" value="SCADA / HMI" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="890" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_orange" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="930" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_orange_text" value="Python / Cloud" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="930" width="120" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

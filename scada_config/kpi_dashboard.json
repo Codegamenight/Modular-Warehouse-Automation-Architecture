@@ -1,0 +1,7 @@
+{
+  "screens": [
+    {"name":"Conveyor Speed", "type":"gauge", "source":"OPCUA/ConveyorSpeed"},
+    {"name":"Robot Status", "type":"status_light", "source":"OPCUA/RobotStatus"},
+    {"name":"Faults", "type":"alarm_list", "source":"OPCUA/FaultSignal"}
+  ]
+}

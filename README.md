@@ -51,3 +51,9 @@ FAT simulation, fault injection, and performance benchmarking will be documented
 
 # Modular-Warehouse-Automation-Architecture
 
+## System Architecture
+
+![System Architecture](architecture_diagrams/system_architecture.png)
+
+This diagram shows PLC control, robot integration, SCADA visualization, Python middleware, and cloud monitoring architecture.
+

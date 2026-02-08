@@ -1,0 +1,21 @@
+/JOB
+//NAME YASKAWA_MAIN
+//POS
+///NPOS 0,0,0,0,0,0
+//INST
+///DATE 2026/02/08
+///COMM Main robot production job
+NOP
+*WAIT_REQ
+IF DI[1]=ON THEN
+  DO[1]=ON  // Robot Busy
+  JMP *EXECUTE
+ENDIF
+WAIT 0.10
+JMP *WAIT_REQ
+
+*EXECUTE
+CALL JOB:YASKAWA_STATE
+DO[2]=ON   // Robot Done
+DO[1]=OFF  // Busy OFF
+JMP *WAIT_REQ

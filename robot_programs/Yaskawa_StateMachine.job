@@ -1,0 +1,10 @@
+/JOB
+//NAME YASKAWA_STATE
+NOP
+// State 1: Pick
+MOVJ P000 VJ=50.00
+// State 2: Place
+MOVJ P001 VJ=50.00
+// State 3: Return Home
+MOVJ P002 VJ=50.00
+RET

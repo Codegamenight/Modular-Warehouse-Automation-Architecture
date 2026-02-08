@@ -42,12 +42,7 @@ This project implements a modular automation architecture for a robotic warehous
 - Alarm and Event Logging  
 - Cloud-Based Remote Monitoring  
 
-## Deployment
-Steps to deploy will be documented.
-
-## Testing
-FAT simulation, fault injection, and performance benchmarking will be documented.
-
+##Finished project outlined Below.
 
 # Modular-Warehouse-Automation-Architecture
 
@@ -56,4 +51,36 @@ FAT simulation, fault injection, and performance benchmarking will be documented
 ![System Architecture](architecture_diagrams/system_architecture.png)
 
 This diagram shows PLC control, robot integration, SCADA visualization, Python middleware, and cloud monitoring architecture.
+
+# Modular Warehouse Automation Architecture
+
+## Overview
+This project demonstrates a modular warehouse automation system integrating:
+
+- **PLC Layer**: Siemens/Beckhoff function blocks for conveyor, robot handshake, alarms, and state machines.
+- **Middleware Layer**: Python OPC UA client/server and MQTT publisher to transmit telemetry.
+- **SCADA Layer**: JSON configurations for trends, alarms, and KPI dashboards.
+- **Architecture**: System diagram showing data flow PLC → OPC UA → MQTT → SCADA → Cloud.
+
+---
+
+## Architecture Diagram
+![System Architecture](architecture_diagrams/system_architecture.png)
+
+---
+
+## Folder Structure
+- `plc_code/`: Modular PLC function blocks.
+- `python_middleware/`: OPC UA client/server scripts and MQTT publisher.
+- `scada_config/`: SCADA dashboard configuration files (alarms, trends, KPI).
+- `docs/`: Documentation, architecture overview, test plans, and specs.
+
+---
+
+## Running the System
+
+### 1. Activate Python Virtual Environment
+```powershell
+cd python_middleware
+.\venv\Scripts\Activate.ps1
 

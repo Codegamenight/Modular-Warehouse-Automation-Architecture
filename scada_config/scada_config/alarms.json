@@ -1,0 +1,20 @@
+{
+  "alarms": [
+    {
+      "name": "Conveyor Fault",
+      "node": "ns=2;s=FaultSignal",
+      "type": "boolean",
+      "trigger_on": true,
+      "severity": "high",
+      "description": "Triggered when the conveyor system reports a fault."
+    },
+    {
+      "name": "Robot Offline",
+      "node": "ns=2;s=RobotStatus",
+      "type": "integer",
+      "trigger_on": 0,
+      "severity": "medium",
+      "description": "Triggered when the robot is not in operational mode."
+    }
+  ]
+}

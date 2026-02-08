@@ -1,7 +1,21 @@
 {
-  "screens": [
-    {"name":"Conveyor Speed", "type":"gauge", "source":"OPCUA/ConveyorSpeed"},
-    {"name":"Robot Status", "type":"status_light", "source":"OPCUA/RobotStatus"},
-    {"name":"Faults", "type":"alarm_list", "source":"OPCUA/FaultSignal"}
+  "dashboard_name": "Warehouse KPI Dashboard",
+  "widgets": [
+    {
+      "name": "Conveyor Speed",
+      "type": "gauge",
+      "data_node": "ns=2;s=ConveyorSpeed"
+    },
+    {
+      "name": "Robot Status",
+      "type": "indicator",
+      "data_node": "ns=2;s=RobotStatus"
+    },
+    {
+      "name": "Fault Signal",
+      "type": "indicator",
+      "data_node": "ns=2;s=FaultSignal"
+    }
   ]
 }
+

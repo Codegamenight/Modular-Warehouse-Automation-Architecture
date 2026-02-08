@@ -1,0 +1,19 @@
+{
+  "trends": [
+    {
+      "name": "Conveyor Speed Trend",
+      "node": "ns=2;s=ConveyorSpeed",
+      "type": "float",
+      "history_depth": 1000,
+      "update_interval_sec": 2
+    },
+    {
+      "name": "Robot Status Trend",
+      "node": "ns=2;s=RobotStatus",
+      "type": "integer",
+      "history_depth": 1000,
+      "update_interval_sec": 2
+    }
+  ]
+}
+

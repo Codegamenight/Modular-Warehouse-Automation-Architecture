@@ -1,4 +1,3 @@
-
 # Modular Warehouse Automation Architecture Portfolio
 
 ## Project Overview
